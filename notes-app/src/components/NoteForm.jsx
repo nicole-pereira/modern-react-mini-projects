@@ -1,32 +1,43 @@
 import { useState } from "react";
 
 const NoteForm = () => {
-  const [title, setTitle] = useState("");
-  const [priority, setPriority] = useState("Medium");
-  const [category, setCategory] = useState("Work");
-  const [description, setDescription] = useState("");
+  const [formData, setFormData] = useState({
+    title: "",
+    category: "Work",
+    priority: "Medium",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: [e.target.value],
+    });
+  };
 
   return (
     <form className="mb-6">
       <div className="mb-4">
         <label htmlFor="title" className="block font-semibold">
-          {title}
+          {formData.title}
         </label>
         <input
+          name="title"
           type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={formData.title}
+          onChange={handleChange}
           className="w-full p-2 border rounded-lg"
         />
       </div>
       <div className="mb-4">
         <label htmlFor="priority" className="block font-semibold">
-          {priority}
+          {formData.priority}
         </label>
         <select
+          name="priority"
           type="text"
-          value={priority}
-          onChange={(e) => setPriority(e.target.value)}
+          value={formData.priority}
+          onChange={handleChange}
           className="w-full p-2 border rounded-lg">
           <option value="High">🔴 High</option>
           <option value="Medium">🟠 Medium</option>
@@ -35,12 +46,13 @@ const NoteForm = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="category" className="block font-semibold">
-          {category}
+          {formData.category}
         </label>
         <select
+          name="category"
           type="text"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          value={formData.category}
+          onChange={handleChange}
           className="w-full p-2 border rounded-lg">
           <option value="Work">💼 Work</option>
           <option value="Personal">🏡 Personal</option>
@@ -52,9 +64,10 @@ const NoteForm = () => {
           Description
         </label>
         <textarea
+          name="description"
           type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={formData.description}
+          onChange={handleChange}
           className="w-full p-2 border rounded-lg"></textarea>
       </div>
 
