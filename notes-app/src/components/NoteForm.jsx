@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const NoteForm = () => {
+const NoteForm = ({ notes, setNotes }) => {
   const [formData, setFormData] = useState({
     title: "",
     category: "Work",
@@ -11,15 +11,36 @@ const NoteForm = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: [e.target.value],
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSumit = (e) => {
+    e.preventDefault();
+
+    //Validation
+    if (!formData.title || !formData.description) return;
+
+    //Create note object
+    const newNote = { id: Date.now(), ...formData };
+
+    //Add notes to state
+    setNotes([newNote, ...notes]);
+
+    // Reset form data
+    setFormData({
+      title: "",
+      category: "Work",
+      priority: "Medium",
+      description: "",
     });
   };
 
   return (
-    <form className="mb-6">
+    <form onSubmit={handleSumit} className="mb-6">
       <div className="mb-4">
         <label htmlFor="title" className="block font-semibold">
-          {formData.title}
+          Title
         </label>
         <input
           name="title"
@@ -31,7 +52,7 @@ const NoteForm = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="priority" className="block font-semibold">
-          {formData.priority}
+          Priority
         </label>
         <select
           name="priority"
@@ -46,7 +67,7 @@ const NoteForm = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="category" className="block font-semibold">
-          {formData.category}
+          Category
         </label>
         <select
           name="category"
