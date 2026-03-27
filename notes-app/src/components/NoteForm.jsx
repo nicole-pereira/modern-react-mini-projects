@@ -14,15 +14,15 @@ const NoteForm = ({ notes, setNotes }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const priorityOptions = [
-    { value: "high", label: "🔴 High" },
-    { value: "medium", label: "🟠 Medium" },
-    { value: "low", label: "🟢 Low" },
+    { value: "High", label: "🔴 High" },
+    { value: "Medium", label: "🟠 Medium" },
+    { value: "Low", label: "🟢 Low" },
   ];
 
   const categoryOptions = [
-    { value: "work", label: "💼 Work" },
-    { value: "personal", label: "🏡 Personal" },
-    { value: "ideas", label: "💡 Ideas" },
+    { value: "Work", label: "💼 Work" },
+    { value: "Personal", label: "🏡 Personal" },
+    { value: "Ideas", label: "💡 Ideas" },
   ];
 
   const handleChange = (e) => {
