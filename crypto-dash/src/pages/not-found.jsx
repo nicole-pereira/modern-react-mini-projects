@@ -30,7 +30,7 @@ const styles = {
   },
   link: {
     textDecoration: "none",
-    color: "#007bff",
+    color: "#ff9100ff",
     fontWeight: "bold",
   },
 };

@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0e1117;
   color: #f0f0f0;
   line-height: 1.6;
@@ -129,7 +129,7 @@ a {
 }
 
 .top-nav a {
-  color: #58a6ff;
+  color: #ff9100ff;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.2s ease;
@@ -175,7 +175,7 @@ a {
   display: inline-block;
   margin-bottom: 20px;
   text-decoration: none;
-  color: #007bff;
+  color: #ff9100ff;
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -219,7 +219,7 @@ a {
 }
 
 .coin-details-links a {
-  color: #007bff;
+  color: #ff9100ff;
   text-decoration: none;
 }
 
