@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AboutPage from "./pages/about";
 import HomePage from "./pages/home";
 import { Route, Routes } from "react-router";
 const API_URL = import.meta.env.VITE_API_URL;
@@ -35,7 +36,7 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/home"
+        path="/"
         element={
           <HomePage
             coins={coins}
@@ -48,7 +49,9 @@ const App = () => {
             loading={loading}
             error={error}
           />
-        }></Route>
+        }
+      />
+      <Route path="/about" element={<AboutPage />}></Route>
     </Routes>
   );
 };
