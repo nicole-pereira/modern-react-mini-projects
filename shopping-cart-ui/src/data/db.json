@@ -60,5 +60,6 @@
       "rating": 4.1,
       "image": "images/product-6.png"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
